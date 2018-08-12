@@ -3,17 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pacote;
+use App\Services\PacoteService;
 
 class PacoteController extends Controller
 {
-    public function __construct()
-    {
 
+    private $pacoteService;
+
+    public function __construct(PacoteService $pacoteService)
+    {
+        $this->pacoteService = $pacoteService;
     }
 
-    public function buscarPacotes()
+    public function buscarTodosPacotes()
     {
-        $pacote = new Pacote();
-        return $pacote->all();
+        return $this->pacoteService->buscarTodosPacotes();
+    }
+
+    public function buscarPacote(int $id)
+    {
+        return $this->pacoteService->buscarPacote($id);
     }
 }
