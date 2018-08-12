@@ -14,3 +14,7 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->get('/test', 'ExampleController@test');
+
+$router->get('/api/pacotes', 'PacoteController@buscarPacotes');
