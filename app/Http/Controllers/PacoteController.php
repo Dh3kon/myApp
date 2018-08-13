@@ -35,4 +35,9 @@ class PacoteController extends Controller
     {
         return $this->pacoteService->editarPacote($id, $request);
     }
+
+    public function excluirPacote(int $id)
+    {
+        return $this->pacoteService->excluirPacote($id);
+    }
 }

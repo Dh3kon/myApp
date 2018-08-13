@@ -15,3 +15,4 @@ $router->get('/api/pacotes', 'PacoteController@buscarTodosPacotes');
 $router->get('/api/pacote/{id}', 'PacoteController@buscarPacote');
 $router->post('/api/pacote', 'PacoteController@criarPacote');
 $router->put('/api/pacote/{id}', 'PacoteController@editarPacote');
+$router->delete('/api/pacote/{id}', 'PacoteController@excluirPacote');
