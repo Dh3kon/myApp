@@ -34,4 +34,9 @@ class PacoteService
     {
         return $this->pacoteRepository->criarPacote($request);
     }
+
+    public function editarPacote(int $id, Request $request)
+    {
+        return $this->pacoteRepository->editarPacote($id, $request);
+    }
 }

@@ -30,4 +30,9 @@ class PacoteController extends Controller
     {
         return $this->pacoteService->criarPacote($request);
     }
+
+    public function editarPacote(int $id, Request $request)
+    {
+        return $this->pacoteService->editarPacote($id, $request);
+    }
 }
