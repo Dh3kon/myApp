@@ -29,4 +29,9 @@ class PacoteService
     {
         return $this->pacoteRepository->buscarPacote($id);
     }
+
+    public function criarPacote(Request $request)
+    {
+        return $this->pacoteRepository->criarPacote($request);
+    }
 }
