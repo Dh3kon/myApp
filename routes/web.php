@@ -12,7 +12,11 @@
 */
 
 $router->get('/api/pacotes', 'PacoteController@buscarTodosPacotes');
-$router->get('/api/pacote/{id}', 'PacoteController@buscarPacote');
-$router->post('/api/pacote', 'PacoteController@criarPacote');
-$router->put('/api/pacote/{id}', 'PacoteController@editarPacote');
-$router->delete('/api/pacote/{id}', 'PacoteController@excluirPacote');
+
+$router->group(['prefix' => 'api/pacote'], function () use ($router) {	
+    $router->get('{id}', 'PacoteController@buscarPacote');
+    $router->get('{id}/detalhes', 'PacoteController@buscarDetalhePacote');
+    $router->post('/','PacoteController@criarPacote'); 
+    $router->put('{id}','PacoteController@editarPacote');
+    $router->delete('{id}', 'PacoteController@excluirPacote'); 	
+});
